@@ -4,14 +4,16 @@ from selenium import webdriver
 from googletrans import Translator
 import time
 import csv
+import os
 
 class ScrapApplication:
     def __init__(self):
         # self.translator = Translator(to_lang="en")
+        self.folder = os.path.dirname(os.path.abspath(__file__))
         print("Scarapping Baidu")
 
     def sent_request(self):
-        browser = webdriver.Chrome("/opt/lampp/htdocs/Django/BaiduScrap/chromedriver")
+        browser = webdriver.Chrome(os.path.join(self.folder,'chromedriver'))
         browser.get("https://qianxi.baidu.com/")
         source = browser.page_source
         time.sleep(10)
