@@ -1,0 +1,5 @@
+venv
+chromedriver_linux64
+chromedriver_linux64.zip
+.idea
+.vscode
